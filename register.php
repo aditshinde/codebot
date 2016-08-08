@@ -1,33 +1,33 @@
 <div class="">
     <div class="row">
-      	<div class="col s12 center-align">
+      	<div class="col s12">
        		<span class="grey-text"><h3>Register</h3></span>
 	    </div>
 	</div>
       	<form method="post" action="">
                   <div class="row">
-                        <div class="input-field col s12 center-align">
+                        <div class="input-field col s12">
                               <i class="material-icons prefix">person_pin</i>
                               <input type="text" name="Rname" class="validate">
                               <label for="last_name">Full Name</label>
                         </div>
                   </div>
       		<div class="row">
-      			<div class="input-field col s12 center-align">
+      			<div class="input-field col s12">
       				<i class="material-icons prefix">email</i>
       				<input type="email" name="Remail" class="validate">
       				<label for="last_name">Email-id</label>
       			</div>
       		</div>
                   <div class="row">
-                        <div class="input-field col s12 center-align">
+                        <div class="input-field col s12">
                               <i class="material-icons prefix">phone</i>
                               <input type="number" name="Rcontact" title="Must be 10 digit" min=5000000000 length="10" class="validate">
                               <label for="last_name">Contact No.</label>
                         </div>
                   </div>
       		<div class="row">
-      			<div class="input-field col s12 center-align">
+      			<div class="input-field col s12">
       				<i class="material-icons prefix">lock</i>
       				<input type="password" name="Rpass" class="validate">
       				<label for="last_name">Password</label>

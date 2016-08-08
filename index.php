@@ -25,10 +25,10 @@ and open the template in the editor.
         ?>
         <div class="container">
 			<div class="row">
-				<div class="col l6 m6 s12 center-align">
+				<div class="col l6 m6 s12">
 					<?php include 'login.php';	?>
 				</div>
-				<div class="col l6 m6 s12 center-align">
+				<div class="col l6 m6 s12">
 					<?php include 'register.php';	?>
 				</div>
 			</div>

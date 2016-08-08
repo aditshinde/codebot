@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Home</title>
         <?php
-        include '../materialize.html';
+        include 'materialize.html';
         ?>
     </head>
     <body>

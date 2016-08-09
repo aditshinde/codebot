@@ -1,7 +1,7 @@
 <div class="">
     <div class="row">
       	<div class="col s12">
-       		<span class="grey-text"><h3>Register</h3></span>
+       		<span class="grey-text darken-2"><h3>Register</h3></span>
 	    </div>
 	</div>
       	<form method="post" action="">

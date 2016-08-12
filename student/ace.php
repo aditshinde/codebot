@@ -43,7 +43,7 @@
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/javascript");
+    editor.getSession().setMode("ace/mode/java");
     
     
     function dark()
@@ -55,6 +55,21 @@
         editor.setTheme("ace/theme/eclipse");
     }
     
+    $('#run').click(function(){
+	var src_code = editor.getValue();
+	//alert(src_code);
+
+	$.ajax({
+		  type : 'POST',
+		  url  : '../Controller/Compile.php',
+		  data : { code:src_code },
+		  success :  function(response)
+	      {
+	      	$('#output').html(response);
+	      	//$('#outputBox').html("Hello <b>world!</b><br>Bye");
+	      }
+	});
+});
 </script>
 </body>
 </html>

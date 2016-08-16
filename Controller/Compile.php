@@ -28,7 +28,7 @@
 	}
 	else
 	{
-		exec('cd ../Submissions && java Hello', $res);
+		exec('cd ../Submissions && java Test', $res);
 		$output = '';
 		foreach($res as $r)
 		{		

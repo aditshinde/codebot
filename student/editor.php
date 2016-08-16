@@ -26,10 +26,10 @@
 
 			<div class="row">
 				<div class="l6 m6 s12">
-                                    <div id="editor">function foo(items) {
-var x = "All this is syntax highlighted";
-return x;
-}</div>
+                                    <div id="editor"> /* 
+ Your code here..
+*/
+									</div>
 <!--		            	<textarea name="codeBox" id="codeBox" class="materialize-textarea editing-area" rows="10" cols="50"></textarea>-->
 		          		
                                 </div>

@@ -18,15 +18,16 @@
 </style>
 </head>
 <body>
+
     <?php require_once 'header.php';?> 
     <div class="card-panel row" >
         <?php require_once './editor_controls.php';?>
         <div class="col l6 m12 s12">
             
-        <div id="editor">function foo(items) {
-    var x = "All this is syntax highlighted";
-    return x;
-    }</div>
+        <div id="editor"> /*
+    Your code here..
+*/
+        </div>
         </div>
         <div class="col l6 m12 s12">
             <div class="row">
@@ -38,13 +39,14 @@
         </div>
     </div>
 
-    
-<script src="../JavaScripts/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
+<script type="text/javascript">
+var editor;
+$(document).ready(function(){
+    editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/java");
-    
+    //alert(editor.getValue());
+});
     
     function dark()
     {
@@ -56,20 +58,38 @@
     }
     
     $('#run').click(function(){
-	var src_code = editor.getValue();
-	//alert(src_code);
+    var src_code = editor.getValue();
+    //alert(src_code);
 
-	$.ajax({
-		  type : 'POST',
-		  url  : '../Controller/Compile.php',
-		  data : { code:src_code },
-		  success :  function(response)
-	      {
-	      	$('#output').html(response);
-	      	//$('#outputBox').html("Hello <b>world!</b><br>Bye");
-	      }
-	});
+    $.ajax({
+          type : 'POST',
+          url  : '../Controller/Compile.php',
+          data : { code:src_code },
+          success :  function(response)
+          {
+            $('#output').html(response);
+            //$('#outputBox').html("Hello <b>world!</b><br>Bye");
+          }
+    });
 });
-</script>
+//     $('#run').click(function(){
+//         alert('aya mai..');
+//     var src_code = editor.getValue();
+//     alert(src_code);
+
+//     $.ajax({
+//           type : 'POST',
+//           url  : '../Controller/Compile.php',
+//           data : { code:src_code },
+//           success :  function(response)
+//           {
+//             $('#output').html(response);
+//             //$('#outputBox').html("Hello <b>world!</b><br>Bye");
+//           }
+//     });
+// });
+</script>   
+<script src="../JavaScripts/codebot.js" type="text/javascript"></script>
+<script src="../JavaScripts/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

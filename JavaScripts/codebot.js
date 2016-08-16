@@ -7,9 +7,9 @@ function sendCode()
 	var code = document.getElementById("codeBox").value;
 	//alert(code);
 }*/
-$('#show-op').click(function(){
-	var src_code = $("#codeBox").val();
-	//alert(src_code);
+$('#r').click(function(){
+	var src_code = $("#editor").val();
+	alert('from js file');
 
 	$.ajax({
 		  type : 'POST',

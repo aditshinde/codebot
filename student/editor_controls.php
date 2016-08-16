@@ -9,6 +9,6 @@
         <a class="waves-effect waves-light btn">Language</a>
     </div>
     <div class="col">
-        <a id="run" class="waves-effect waves-light btn green">Run</a>
+        <a id="run" class="waves-effect waves-light btn green" onclick="sendCode();">Run</a>
     </div>
 </div>

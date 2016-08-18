@@ -1,6 +1,6 @@
 <?php
-	require 'Courses.php';
-	require 'Database.php';
+	require_once 'Courses.php';
+	require_once 'Database.php';
 
 	class CoursesDAO 
 	{
@@ -35,6 +35,19 @@
 					$cou->semester = $r->semester;
 				}
 				return $cou;
+		}
+		public function getCourseName($course_id)
+		{ 
+			$db = new Database();
+			$handle = $db->connectDb();
+
+			$sql = "select * from courses where course_id=?";
+			$res = $handle->prepare($sql);
+			$res->execute(array($course_id));
+			while($r = $res->fetch(PDO::FETCH_OBJ))
+			{
+				return $r->name;
+			}
 		}
 	}
 

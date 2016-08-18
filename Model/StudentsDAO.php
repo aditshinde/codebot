@@ -1,6 +1,6 @@
 <?php
-	require 'Students.php';
-	require 'Database.php';
+	require_once 'Students.php';
+	require_once 'Database.php';
 
 	class StudentsDAO 
 	{
@@ -39,6 +39,26 @@
 					$stu->pincode = $r->pincode;
 				}
 				return $stu;
+		}
+
+		public function verifyStudent($roll,$pass)
+		{
+			$db = new Database();
+			$handle = $db->connectDb();
+			$sql = "select * from students_login where roll_no=? and pass=?";
+			$res = $handle->prepare($sql);
+			$res->execute(array($roll,$pass));
+			// if($res==false)
+			// {
+			// 	return false;
+			// }
+			$stu = "";
+			while($r = $res->fetch(PDO::FETCH_OBJ))
+			{
+				$stu = new Students();
+				$stu->roll_no = $r->roll_no;
+			}
+			return $stu;
 		}
 	}
 

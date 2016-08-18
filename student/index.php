@@ -5,11 +5,20 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
+	require_once '../Model/Students.php';
+	require_once '../Model/Courses.php';
+
 	session_start();
-	if(isset($_SESSION['vo_id']))
+	if(!isset($_SESSION['students']))
 	{
-		$makeDisable='disabled';
-	}else{	$makeDisable=' ';	}
+		header('Location: ../');
+	}
+
+	//Store session var to obj
+	$stu = new Students();
+	$stu = $_SESSION['students'];
+	$crs[] = new Courses();
+	$crs = $_SESSION['crs'];
 ?>
 <html>
     <head>
@@ -25,12 +34,26 @@ and open the template in the editor.
         ?>
         <div class="container">
 			<div class="row">
-				<div class="col l6 m6 s12 center-align">
-					<?php include 'login.php';	?>
-				</div>
-				<div class="col l6 m6 s12 center-align">
-					<?php include 'register.php';	?>
-				</div>
+				<?php for($i=1;$i<count($crs);$i++) { ?>
+					<div class="col l4 m6 s12 center-align">
+						<!-- <p>
+							<?php echo $stu->roll_no;	?> <br>
+							<?php echo $stu->name;	?> <br>
+							<?php echo $crs[1]->course_id;	?> <br>
+							<?php echo $crs[1]->name;	?> <br>
+						</p> -->
+						<div class="card blue-grey darken-1">
+				            <div class="card-content white-text">
+				              <span class="card-title"><?php echo $crs[$i]->course_id; ?></span>
+				              <p><?php echo $crs[$i]->name; ?></p>
+				            </div>
+				            <div class="card-action">
+				              <a href="#">Show this</a>
+				            </div>
+				        </div>
+					</div>
+				<?php }	?>
+
 			</div>
 		</div>
     </body>

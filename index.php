@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <?php
 	session_start();
-	if(isset($_SESSION['vo_id']))
+	if(isset($_SESSION['roll_no']))
 	{
 		$makeDisable='disabled';
 	}else{	$makeDisable=' ';	}

@@ -1,6 +1,7 @@
 <?php
 	require_once 'Students_course.php';
 	require_once 'CoursesDAO.php';
+	require_once 'Courses.php';
 	//require 'Database.php';
 
 	class Students_courseDAO {

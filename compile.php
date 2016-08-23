@@ -3,7 +3,7 @@
 	$code = $_POST['code'];
 	//echo $code;	//it'll show error on this page, but can be displayed in textarea
 
-	$input_file = fopen("submissions/14ce5504.java", "w");
+	$input_file = fopen("submissions/Test.java", "w");
 	fwrite($input_file, $code);
 	fclose($input_file);
 /*
@@ -16,7 +16,7 @@
 	//print($output);	
 	echo $output;
 */
-	exec('cd submissions && javac 14ce5504.java 2>&1', $re);
+	exec('cd submissions && javac Test.java 2>&1', $re);
 	if($re)
 	{
 		$op='';
@@ -28,7 +28,7 @@
 	}
 	else
 	{
-		exec('cd submissions && java Hello', $res);
+		exec('cd submissions && java Solution', $res);
 		$output = '';
 		foreach($res as $r)
 		{		
